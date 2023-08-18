@@ -21,6 +21,7 @@ export default function () {
                     <thead>
                         <tr>
                             <th scope="col">#</th>
+                            <th scope="col">ID</th>
                             <th scope="col">Name</th>
                             <th scope="col">UserName</th>
                             <th scope="col">Email</th>
@@ -32,6 +33,7 @@ export default function () {
                             users.map((user, index) => (
                                 <tr>
                                     <th scope="row" key={index}>{index + 1}</th>
+                                    <th scope="row">{user.id}</th>
                                     <td>{user.name}</td>
                                     <td>{user.username}</td>
                                     <td>{user.email}</td>
@@ -39,7 +41,7 @@ export default function () {
                                     <td>
                                         <button className='btn btn-primary mx-2' >View</button>
                                         <button className='btn btn-light mx-2' >Edit</button>
-                                        <button className='btn btn-danger mx-2' >Edit</button>
+                                        <button className='btn btn-danger mx-2' >Delete</button>
                                     </td>
                                 </tr>
                             ))
