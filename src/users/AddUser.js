@@ -1,6 +1,21 @@
-import React from 'react'
+import React from 'react';
+import { useState }from 'react';
 
 export default function AddUser() {
+
+    const [user, setuser] = useState({
+        name:"",
+        username:"",
+        email:"",
+    });
+
+    const {name , username, email}=user;
+
+    const onInputChange = (e) => {
+        setuser({ ...user, [e.target.name]:e.target.value});
+    }
+
+
   return (
     <div className='container'>
         <div className='row'>
@@ -8,7 +23,13 @@ export default function AddUser() {
                 <h2 className='text-center m-4'>Register User</h2>
                 <div className='mb-3'>
                     <label htmlFor='Name' className='form-label'>Name</label>
-                    <input type='{text}' className='form-control' placeholder='Enter your name' name='name'></input>
+                    <input
+                    type='{text}'
+                    className='form-control'
+                    placeholder='Enter your name'
+                    name='name'
+                    value={name}
+                    onChange={(e)=>onInputChange(e)}/>
                 </div>
 
                 <div className='mb-3'>
