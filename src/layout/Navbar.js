@@ -6,7 +6,7 @@ export default function Navbar() {
         <div>
             <nav className="navbar navbar-expand-lg navbar-dark bg-primary">
                 <div className="container-fluid">
-                    <a className="navbar-brand" href="#">FullStack Application</a>
+                    <Link className="navbar-brand" to="/">FullStack Application</Link>
 
                     <Link className="btn btn-outline-light" to="/adduser">
                         Add User

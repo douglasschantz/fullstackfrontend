@@ -19,7 +19,7 @@ export default function () {
     const deleteUser = async (id) => {
         await axios.delete(`http://localhost:8080/user/${id}`);
         loadUsers();
-      };
+    };
 
     return (
         <div className='container'>
@@ -46,7 +46,9 @@ export default function () {
                                     <td>{user.email}</td>
 
                                     <td>
-                                        <button className='btn btn-primary mx-2' >View</button>
+                                        <Link className="btn btn-primary mx-2" to={`/viewuser/${user.id}`}>
+                                            View
+                                        </Link>
                                         <Link className='btn btn-light mx-2' to={`/edituser/${user.id}`} >Edit</Link>
                                         <button className='btn btn-danger mx-2' onClick={() => deleteUser(user.id)}>Delete</button>
                                     </td>
