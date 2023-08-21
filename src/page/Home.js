@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
+import { Link } from 'react-router-dom';
 
 export default function () {
-
     const [users, setUsers] = useState([])
 
     useEffect(() => {
@@ -40,7 +40,7 @@ export default function () {
 
                                     <td>
                                         <button className='btn btn-primary mx-2' >View</button>
-                                        <button className='btn btn-light mx-2' >Edit</button>
+                                        <Link className='btn btn-light mx-2' to={`/edituser/${user.id}`} >Edit</Link>
                                         <button className='btn btn-danger mx-2' >Delete</button>
                                     </td>
                                 </tr>
